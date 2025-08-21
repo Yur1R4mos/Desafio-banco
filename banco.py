@@ -35,14 +35,14 @@ while True:
         elif valor > limite:
             print("Operação falhou! Valor ultrapassa o limite permitido para saque")
 
-        elif qtd_saques > qtd_max_saques:
+        elif qtd_saques >= qtd_max_saques:
             print("Operação falhou! Você ultrapassou o limite de saques diarios permitido")
         
         elif valor > 0:
             saldo -= valor
             extrato += f"Saque: R$ {valor:.2f}\n"
-            qtd_saques +=1
             print("Saque realizado com sucesso!")
+            qtd_saques +=1
 
         else:
             print("Operação inválida! O valor informado é invalido")
@@ -55,6 +55,6 @@ while True:
 
     elif opcao == 0:
         break
-    
+
     else:
         print("Operação falhou, informe novamente a operação desejada")
